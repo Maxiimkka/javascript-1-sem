@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #c1 {
+      width: 300px;
+      height: 300px;
+      border: 3px solid rgb(16, 4, 184);
+    }
+  </style>
+</head>
+
+<body >
+
+  <img src="mrxcyoj1s3q.png" style="position:absolute;" id="myimg">
+  <br>
+  <br>
+  <textarea id="txt" style="position:absolute; top:30px;  font-size: 10px;  font-family: Arial;">ТЕКСТ</textarea>
+  <br>
+  <img src="newпанк3.jpg" id="img" style="width: 300px;height: 200px; position:absolute;">
+  <br>
+  <img src="newпанк2.jpg" id="myImg" style="position:absolute; top:250px; left:30%;width: 250px; height: 130px;">
+  <br>
+  <div>
+    <div style="position:absolute; top:600px; left:30px">
+      <form name="fenster">
+        <p>Цвет:</p>
+        <select id='select' name='color' style="font-family:arial; border: white 5px solid; margin:10px;">
+          <option id='blue' value="rgb(30, 9, 98)">синий</option>
+          <option id='red' value="rgb(255, 0, 0)">красный</option>
+          <option id='green' value="rgb(0, 255, 64)">зеленый</option>
+          <option id='yellow' value="rgb(238, 255, 0)">желтый</option>
+        </select><br />
+        <input type="radio" name='s' value='1' />y=x^2</br>
+        <input type="radio" name='s' value='2' />y=x^3</br>
+        <input type="radio" name='s' value='3' />y=sin(x)</br>
+        <input type="radio" name='s' value='4' />y=cos(x)
+      </form>
+      <input type="button" onclick='save()' value='Нарисовать'
+        style="margin:5px; font-family:arial; background-color:rgb(224, 14, 77); border: 5px rgb(180, 16, 16) solid" />
+    </div>
+    <canvas id="c1" width="400px" height="400px" style="position:absolute; top:650px; left:200px; margin:5px;">
+    </canvas>
+    <script>
+
+      //1 
+      var a = document.getElementById('myimg');
+      a.onmousedown = function () {
+        document.onmousemove = function (e) {
+          a.style.left = e.pageX - a.offsetWidth / 2 + 'px'; //Свойство offsetWidth возвращает ширину элемента.
+          a.style.top = e.pageY - a.offsetHeight / 2 + 'px'; //Свойство offsetHeight возвращает высоту элемента.
+        }
+        a.onmouseup = function () {
+          document.onmousemove = null;
+        }
+        a.ondragstart = function () {
+          return false;
+        };
+      }
+      //Создать программу на JS, позволяющую перетащить мышью текст. 
+      var text = document.getElementById('txt');
+      text.onmousedown = function () {
+        document.onmousemove = function (e) {
+          text.style.left = e.pageX - text.offsetWidth / 2 + 'px';
+          text.style.top = e.pageY - text.offsetHeight / 2 + 'px';
+        }
+        text.onmouseup = function () {
+          document.onmousemove = null;
+        }
+        text.ondragstart = function () {
+          return false;
+        };
+      }
+
+      //2
+      //Создать программу на JS, организующую движение картинки по прямой линии. 
+      var img_line = document.getElementById('img');
+
+      function move_img() {
+        let counter = 0;
+        return () => {
+          counter += 10;
+          img_line.style.marginLeft = counter + "px";
+          if (counter == 1100) clearInterval(time)
+        }
+
+      }
+
+      let move = move_img();
+      let time = setInterval("move()", 50);
+      //3 
+      let idImg = document.getElementById("myImg");
+      setInterval("moveR()", 40);
+
+      function moveR() {
+        if (parseInt(idImg.style.left) < 500) {
+          idImg.style.left = parseInt(idImg.style.left) + 10 + "px";
+          idImg.style.top = parseInt(idImg.style.top) + 5 + "px";
+
+        } else {
+          idImg.style.left = 30 + "px";
+          idImg.style.top = 250 + "px";
+        }
+      }
+
+      //4 
+      function save() {
+        var canvas = document.getElementById('c1');
+        var ctx = canvas.getContext('2d');
+        var func = Number(document.forms.fenster.s.value);
+        var col = document.forms.fenster.color.value;
+        switch (func) {
+
+          case 1: {
+            var x = 0;
+            var move = setInterval(
+              function draw2() {
+                let y_2 = 200 - 0.08 * Math.pow(x - 200, 2);
+                x = x + 0.3;
+                ctx.fillStyle = col;
+                ctx.fillRect(x, y_2, 2, 2);
+              }, 5);
+            ; break;
+          }
+
+          case 2: {
+            var x = 0;
+            var move = setInterval(
+              function draw3() {
+                let y_3 = 200 - 0.002 * Math.pow(x - 200, 3);
+                x += 0.3;
+                ctx.fillStyle = col;
+                ctx.fillRect(x, y_3, 2, 2);
+              }, 1);
+            ; break;
+          }
+
+          case 3: {
+            var x = 0;
+            var move = setInterval(
+              function drawSin() {
+                let y_sin = 200 + 10 * Math.sin(0.2 * (x - 200));
+                x += 0.8;
+                ctx.fillStyle = col;
+                ctx.fillRect(x, y_sin, 2, 2);
+              }, 5);
+            break;
+          }
+
+          case 4: {
+            var x = 0;
+            var move = setInterval(
+              function drawCos() {
+                let y_cos = 200 + 10 * Math.cos(0.2 * (x - 1200));
+                x += 0.8;
+                ctx.fillStyle = col;
+                ctx.fillRect(x, y_cos, 2, 2);
+              }, 5);
+            ; break;
+          }
+        }
+      }
+
+      //5 
+      select.onclick = function () {
+        let color = document.forms.fenster.color.value;
+        if (color == 'blue') {
+          document['select'].style.backgroundColor = 'rgb(30, 9, 98)'
+          document['select'].style.borderColor = 'rgb(30, 9, 98)'
+          document['select'].style.color = 'rgb(30, 9, 98)'
+        }
+        if (color == 'red') {
+          document['select'].style.backgroundColor = 'rgb(255, 0, 0)'
+          document['select'].style.borderColor = 'rgb(255, 0, 0)'
+          document['select'].style.color = 'rgb(255, 0, 0)'
+        }
+        if (color == 'green') {
+          document['select'].style.backgroundColor = 'rgb(0, 255, 64)'
+          document['select'].style.borderColor = 'rgb(0, 255, 64)'
+          document['select'].style.color = 'rgb(0, 255, 64)'
+        }
+        if (color == 'yellow') {
+          document['select'].style.backgroundColor = 'rgb(238, 255, 0)'
+          document['select'].style.borderColor = 'rgb(238, 255, 0)'
+          document['select'].style.color = 'rgb(238, 255, 0)'
+        }
+      } </script>
+</body>
+
+</html>

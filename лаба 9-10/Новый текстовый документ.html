@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #c1 {
+      width: 300px;
+      height: 300px;
+      border: 3px solid rgb(16, 4, 184);
+    }
+  </style>
+</head>
+
+<body id="mybody">
+
+  <img src="mrxcyoj1s3q.png" style="position:absolute;" id="myimg">
+  <br>
+  <br>
+  <textarea id="txt" style="position:absolute; top:30px;  font-size: 10px;  font-family: Arial;">ТЕКСТ</textarea>
+  <br>
+  <img src="newпанк3.jpg" id="img" style="width: 300px;height: 200px;">
+  <br>
+  <img src="newпанк2.jpg" id="myImg" style="position:absolute; top:250px; left:30%;width: 250px; height: 130px;">
+  <br>
+  <div>
+    <div style="position:absolute; top:600px; left:30px">
+      <form name="fenster">
+        <p>Цвет:</p>
+        <select id='select' name='color' style="font-family:arial; border: white 5px solid; margin:10px;">
+          <option id='blue' value="rgb(30, 9, 98)">синий</option>
+          <option id='red' value="rgb(255, 0, 0)">красный</option>
+          <option id='green' value="rgb(0, 255, 64)">зеленый</option>
+          <option id='yellow' value="rgb(238, 255, 0)">желтый</option>
+        </select><br />
+        <input type="radio" name='s' value='1' />y=x^2</br>
+        <input type="radio" name='s' value='2' />y=x^3</br>
+        <input type="radio" name='s' value='3' />y=sin(x)</br>
+        <input type="radio" name='s' value='4' />y=cos(x)
+      </form>
+      <input type="button" onclick='save()' value='Нарисовать'
+        style="margin:5px; font-family:arial; background-color:rgb(224, 14, 77); border: 5px rgb(180, 16, 16) solid" />
+    </div>
+    <canvas id="c1" width="400px" height="400px" style="position:absolute; top:650px; left:200px; margin:5px;">
+    </canvas>
+    <script>
+      flag = false // нельзя перемещать
+      var id_img = "myimg"
+      function drag() {
+        flag = mag;
+        id_img = event.srcElement.myimg;
+      }
+      mybody.onmousedown = function () {
+        if (flag) {
+          // если можно перемещать
+          document.all[id_img].style.top = event.clientY;
+          document.all[id_img].style.left = event.clientX;
+        }
+      }
+      mybody.onmouseup = function () {
+        flag = false
+        // нельзя перемещать
+      }
+
+
+
+
+    </script>
+</body>
+
+</html>
