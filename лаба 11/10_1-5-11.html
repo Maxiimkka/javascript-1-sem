@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #c1 {
+      width: 300px;
+      height: 300px;
+      border: 3px solid rgb(16, 4, 184);
+    }
+  </style>
+</head>
+
+<body>
+
+  <img src="mrxcyoj1s3q.png" style="position:absolute;" id="myimg">
+  <br>
+  <br>
+  <div id="txt"
+    style="position:absolute; border: 1px solid black; top:30px;  font-size: 10px; width: 70px;text-align: center;  font-family: Arial;">
+    <p>ТЕКСТ</p>
+  </div>
+  <br>
+  <img src="newпанк3.jpg" id="im" onclick="init_microsoft()" style="width: 300px;height: 200px; position:absolute;">
+  <br>
+  <img src="newпанк2.jpg" id="kr" style="position:absolute; top:300px;width: 250px; height: 130px;">
+  <br>
+  <div>
+    <div style="position:absolute; top:600px; left:30px">
+      <form name="fenster">
+        <select id='select' name='color' style="font-family:arial; border: white 5px solid; margin:10px;">
+          <option id='blue' value="rgb(30, 9, 98)">синий</option>
+          <option id='red' value="rgb(255, 0, 0)">красный</option>
+          <option id='green' value="rgb(0, 255, 64)">зеленый</option>
+          <option id='yellow' value="rgb(238, 255, 0)">желтый</option>
+        </select><br />
+        <input type="radio" name='s' value='1' />y=x^2</br>
+        <input type="radio" name='s' value='2' />y=x^3</br>
+        <input type="radio" name='s' value='3' />y=sin(x)</br>
+        <input type="radio" name='s' value='4' />y=cos(x)
+
+      </form>
+      <input type="button" id="sh" value='Нарисовать'
+        style="margin:5px; font-family:arial; background-color:rgb(224, 14, 77); border: 5px rgb(180, 16, 16) solid" />
+    </div>
+    <canvas id="c1" width="400px" height="400px" style="position:absolute; top:600px; left:150px; margin:5px;">
+    </canvas>
+
+    <script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="jquery/jquery-ui.js"></script>
+    <script>
+
+      //1 
+      $(function () {
+        $("#myimg").draggable();
+      })
+
+      $(function () {
+        $("#txt").draggable();
+      })
+
+      //2
+
+      $("#im").click(function () {
+        $("#im").first().animate({ left: 950 }, 1000);
+      });
+      //3 
+      $("#kr").click(function () {
+
+        $("#kr").animate({ marginLeft: 100, marginTop: 160 }, 500);
+        $("#kr").animate({ marginLeft: 150, marginTop: -5 }, 500);
+        $("#kr").animate({ marginLeft: 200, marginTop: 160 }, 500);
+        $("#kr").animate({ marginLeft: 250, marginTop: -5 }, 500);
+        $("#kr").animate({ marginLeft: 300, marginTop: 160 }, 500);
+        $("#kr").animate({ marginLeft: 350, marginTop: -5 }, 500);
+        $("#kr").animate({ marginLeft: 400, marginTop: 160 }, 500);
+        $("#kr").animate({ marginLeft: 0, marginTop: 0 }, 500);
+
+
+      })
+
+      //4
+      $(document).ready(function () {
+        $("#sh").click(function () {
+
+          var canvas = document.getElementById('c1');
+          var ctx = canvas.getContext('2d');
+          var func = Number(document.forms.fenster.s.value);
+          var col = document.forms.fenster.color.value;
+          switch (func) {
+
+            case 1: {
+              var x = 0;
+              var move = setInterval(
+                function draw2() {
+                  let y_2 = 200 - 0.08 * Math.pow(x - 200, 2);
+                  x = x + 0.3;
+                  ctx.fillStyle = col;
+                  ctx.fillRect(x, y_2, 2, 2);
+                }, 5);
+              ; break;
+            }
+
+            case 2: {
+              var x = 0;
+              var move = setInterval(
+                function draw3() {
+                  let y_3 = 200 - 0.002 * Math.pow(x - 200, 3);
+                  x += 0.3;
+                  ctx.fillStyle = col;
+                  ctx.fillRect(x, y_3, 2, 2);
+                }, 1);
+              ; break;
+            }
+
+            case 3: {
+              var x = 0;
+              var move = setInterval(
+                function drawSin() {
+                  let y_sin = 200 + 10 * Math.sin(0.2 * (x - 200));
+                  x += 0.8;
+                  ctx.fillStyle = col;
+                  ctx.fillRect(x, y_sin, 2, 2);
+                }, 5);
+              break;
+            }
+
+            case 4: {
+              var x = 0;
+              var move = setInterval(
+                function drawCos() {
+                  let y_cos = 200 + 10 * Math.cos(0.2 * (x - 1200));
+                  x += 0.8;
+                  ctx.fillStyle = col;
+                  ctx.fillRect(x, y_cos, 2, 2);
+                }, 5);
+              ; break;
+            }
+          }
+        })
+      })
+      $('#select').onclick = function () {
+        let color = document.forms.fenster.color.value;
+        if (color == 'blue') {
+          $('#select').css("color", "blue")
+        }
+        if (color == 'red') {
+          $('#select').css("color", "red")
+        }
+        if (color == 'green') {
+          $('#select').css("color", "green")
+        }
+        if (color == 'yellow') {
+          $('#select').css("color", "yellow")
+        }
+      }
+    </script>
+</body>
+
+</html>

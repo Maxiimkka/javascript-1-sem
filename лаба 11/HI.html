@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery/jquery.js"></script>
+    <style>
+        h1 {
+            margin-top: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            height: 135px;
+            border-color: black;
+            border-style: solid;
+            border-width: 1px;
+            width: 22%;
+            font-size: 16px;
+            font-family: helvetica, serif;
+            margin: 50px auto auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>1</h1>
+
+    <p id="z1">
+        Excepteur do aliqua sint.<br />
+        Reprehenderit adipisicing proident.<br />
+        In anim mollit consequat Lorem.<br />
+        Adipisicing duis deserunt.
+    </p>
+
+
+
+    <h1>2</h1>
+
+    <p id="z2">
+        Esse ipsum aliquip labore.<br />
+        Eu commodo occaecat dolore pariatur.<br />
+        Ex voluptate occaecat mollit.<br />
+    </p>
+
+
+    <h1>3</h1>
+
+    <p style="width:333px">
+        <img id="z3" src="морген.jpg" height='135px' width='333px'>
+    </p>
+
+
+    <h1>4</h1>
+
+    <p id="z4" style="width:333px">
+        Amet mollit quis excepteur. <br />
+        Incididunt cillum enim.<br />
+        Anim cupidatat minim.<br />
+        Aliquip minim consequat.
+    </p>
+
+
+    <h1>5</h1>
+
+    <p>
+        <img id="z5" style="width: 323px;height: 135px;" src="aAzTvc.jpg">
+    </p>
+
+
+    <h1>6</h1>
+
+    <p id="z6" style="border: 0;">
+        Mollit labore veniam.<br />
+        Nostrud sint ex eu minim.<br />
+        Mollit quis duis enim.<br />
+        Amet in enim sit.
+    </p>
+
+    <script>
+
+
+        //<!-- $(селектор).метод(); --> 
+        $("#z1").mouseover(function () { $("#z1").css("color", "red") });
+        $("#z1").mouseout(function () { $("#z1").css("color", "black") });
+
+        $("#z2").click(function () { $("#z2").css("fontSize", "25px") });
+
+
+        $("#z3").click(function () { $("#z3").attr("src", "california-hipster-indie-wallpapers-Favim.com-3868616.jpg") });
+
+        $("#z4").click(function () { $("#z4").html("\<img id=\"z4\" src=\"c1ebd2c8027797323b94ce9446bb0cbe.jpg\" height='135px' width='333px'>") });
+
+
+        $("#z5").mouseover(function () { $("#z5").css("width", "666px") });
+
+        $("#z5").mouseout(function () { $("#z5").css("width", "323px") });
+
+        $("#z6").dblclick(function () { $("#z6").css("border", "5px double black") });
+
+    </script>
+</body>
+
+</html>

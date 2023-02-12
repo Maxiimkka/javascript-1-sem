@@ -1,0 +1,64 @@
+body {
+    background: url("Хороший\ фон\ для\ сайтов.png");
+    }
+    
+    .key {
+    text-align: center;
+    font-family: Agency FB, serif;
+    color: whitesmoke;
+    font-size: 23px
+    }
+    
+    .btn {
+    height: 100px;
+    background: rgba(255, 255, 255, .3);
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    width: 20%;
+    border-radius: 7px;
+    font-size: 16px;
+    vertical-align: middle;
+    }
+    
+    .btn:hover {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    background: rgba(159, 209, 223, .7);
+    }
+    
+    .btn:focus {
+    background: #ddd;
+    border-color: #333;
+    border-style: solid;
+    border-width: 1px;
+    }
+    
+    input {
+    margin-top: 50px;
+    margin-bottom: 25px;
+    
+    }
+    
+    div{ 
+        margin-top:20px ; 
+        font-size:24px; 
+        text-align: center;
+    }
+
+    p {
+    height: 135px;
+    background: rgba(255, 255, 255, .3);
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    width: 22%;
+    border-radius: 7px;
+    font-size: 16px;
+    font-family: helvetica, serif;
+    text-decoration: none;
+    vertical-align: middle;
+    margin: 50px auto auto;
+    }

@@ -1,0 +1,29 @@
+#nav {
+  display: flex;
+}
+
+.menu-item1,
+.menu-item2,
+.menu-item3 {
+  border: 2px solid black;
+  background: #ff7518;
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.menu-item1>.submenu1,
+.menu-item2>.submenu2,
+.menu-item3>.submenu3 {
+  border: 1px solid black;
+  transition: 0.3s ease-in-out;
+  display: none;
+  background: #fff44f;
+  position: absolute;
+  cursor: pointer;
+  width: 100px;
+  margin-top: 10px;
+  top: 30px;
+}
