@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Смена времен года на Земле</title>
+  <style>
+    p {
+      text-align: center;
+    }
+
+    input {
+      display: inline-block;
+      width: 340px;
+      height: 55px;
+      margin: 10px 20px;
+      text-align: center;
+      letter-spacing: 1px;
+      font-weight: 600;
+      color: black;
+      background: darkorchid;
+      box-shadow: 0 8px 15px darkorchid;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <script>
+    function a1() {
+      for (i = 0; i < document.all.length; i++) {
+        tagNam = document.all[i].tagName + document.all[i].nodeType;
+
+        console.log(i + '.' + tagNam)
+      }
+
+    }
+
+    function a2() {
+      for (i = 0; i < document.body.childNodes.length; i++) {
+        let tagNum = document.body.childNodes[i].tagName;
+        if (tagNum != undefined) {
+          console.log(i + '.' + tagNum)
+        }
+      }
+    }
+
+    function a3() {
+      alert("Первый span " + document.all[14].innerHTML);
+      alert("Первый span " + document.body.querySelector('span').innerHTML);
+      alert("Первый span " + document.getElementById('qw').innerHTML);
+    }
+    function a4() {
+      let marks = 0;
+      let all_mark = document.getElementsByClassName('mark');
+      for (let i = 0; i < all_mark.length; i++) {
+        marks += +all_mark[i].innerHTML;
+      }
+      marks = marks / 4;
+
+      let all1 = document.getElementsByTagName('span');
+      all1[1].innerHTML = all1[1].innerHTML + ",средний балл:" + marks;
+    }
+  </script>
+
+  <h1 align="center" style="color: rgb(255, 136, 0)">
+    <font face="Arial"><i>Смена времен года на Земле</i></font>
+  </h1>
+
+  <h2 align="center">Времена года</h2>
+
+  <h3>Почему происходит смена времен года</h3>
+  <p>
+    <font face="Bart" style="color: red" size="3">В древности люди объясняли перемену сезонов года с
+      помощью мифологии. Лишь в эпоху Возрождения было доказано, что планета имеет форму шара, вращается вокруг Солнца.
+      Зима и лето сменяются из-за того, что планета прогревается неравномерно. Поскольку угол наклона оси по отношению к
+      Солнцу составляет 23°, на одно полушарие солнечные лучи попадают под прямым углом, а на второе — под острым. Во
+      время оборота лучше освещается то один участок, то другой из-за перемены положения относительно Солнца. Одно
+      полушарие получает большую часть тепла. <span id="qw" style="color: blue">Там наступают летние дни.</span> При
+      этом на
+      противоположное приходят зимние
+      холода.</font>
+  </p>
+
+  <h3>Календарные времена года</h3>
+  <p>
+    <font face="Arial" style="color: rgba(200, 0, 255, 0.384)" size="4">Зимой световые дни укорачиваются, температура
+      снижается. Количество
+      осадков может увеличиться. В большей части регионов России выпадает снег, наблюдается отрицательная температура. В
+      районах с более мягким климатом похолодание не такое сильное, возможны затяжные дожди, ливни.Летом длина светового
+      дня наибольшая. <span style="color: rgb(0, 255, 0)">Увеличивается и температура воздуха</span> В расположенных
+      неподалеку от полюсов областях темные ночи
+      могут совсем отсутствовать. Там светло круглые сутки. Снег летом идет лишь на приближенных к полюсам территориях.
+      На южном полушарии летом теплее, поскольку планета в этот период приближается к Солнцу.</font>
+  </p>
+
+  <h3>Астрономические времена года</h3>
+  <p>
+    <font face="calibri" style="color: rgba(255, 0, 0, 0.384)" size="5">Началом астрономических времен года
+      считают дни, в которые центр Солнца проходит через точки солнцестояний либо равноденствий.
+      <span style="color: rgb(0, 255, 0)">Всего их 4, как и календарных сезона</span>
+      Астрономическое лето длится от летнего солнцестояния (21 июня) до осеннего равноденствия (23 сентября). Оно
+      занимает 93 дня 14 часов и 24 минуты.
+
+      Затем наступает осень, продолжающаяся до 22 декабря — даты зимнего солнцестояния. Длится она 89 дней 18 часов и 42
+      минуты.
+
+      После следует длящаяся до весеннего равноденствия (21 марта) зима. Длина этого сезона равняется 89 дням и 30
+      минутам.
+
+      Весна завершается днем солнцестояния летом. Продолжительность ее равна 92 дням 20 часам и 12 минутам.
+    </font>
+  </p>
+  <h2>Поры года</h2>
+  <ol>
+    <li>Зима
+      <ul>
+        <li type=disc>холод </li>
+        <li type=disc>снег </li>
+      </ul>
+    </li>
+    <li>Весна</li>
+    <ul>
+      <li>солнце </li>
+      <li>ручьи </li>
+      <li> лужи </li>
+    </ul>
+    <li>Лето
+      <ul>
+        <li type=square>жара </li>
+        <li type=square>отдых </li>
+      </ul>
+    </li>
+  </ol>
+  <h2>Месяца</h2>
+  <table border="1" width="600" height="200">
+    <tr>
+      <td align="center">Зима</td>
+      <td align="center">Осень</td>
+      <td align="center">Лето</td>
+      <td align="center">Весна</td>
+    </tr>
+
+    <tr>
+      <td rowspan="3" align="center">
+        <ul>
+          <li>Декабрь </li>
+          <li>Январь </li>
+          <li> Февраль </li>
+        </ul>
+      </td>
+      <td rowspan="3" align="center">
+        <ul>
+          <li>Сентябрь </li>
+          <li>Октябрь </li>
+          <li>Ноябрь </li>
+        </ul>
+      </td>
+      <td rowspan="3" align="center">
+        <ul>
+          <li>Июль</li>
+          <li>Июнь </li>
+          <li>Август </li>
+        </ul>
+      </td>
+      <td rowspan="3" align="center">
+        <ul>
+          <li>Март </li>
+          <li>Апрель </li>
+          <li> Май </li>
+        </ul>
+      </td>
+
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">Холодные месяца</td>
+      <td colspan="2" align="center"> <a href=second.html>Тёплые месяца </a></td>
+    </tr>
+  </table>
+  <br>
+  <p><input type='button' value='задание 1' onclick='a1()'>
+    <input type='button' value='задание 2' onclick='a2()'>
+    <input type='button' value='задание 3' onclick='a3()'>
+    <input type='button' value='Посчитать средний балл' onclick='a4()'>
+  </p>
+
+
+  <table align="center" border="1">
+    <tr>
+      <th>Предмет</th>
+      <th>Оценка</th>
+    </tr>
+    <tr>
+      <td>Физика:</td>
+      <td class="mark"> 10 </td>
+    </tr>
+    <tr>
+      <td>Математика:</td>
+      <td class="mark"> 9 </td>
+    </tr>
+    <tr>
+      <td>Астрономия:</td>
+      <td class="mark"> 10 </td>
+    </tr>
+    <tr>
+      <td>Русский язык:</td>
+      <td class="mark"> 8 </td>
+    </tr>
+  </table>
+
+</body>
+
+</html>

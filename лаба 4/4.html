@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Laba4</title>
+  <style>
+    .button {
+      display: inline-block;
+      width: 340px;
+      height: 55px;
+      margin: 10px 20px;
+      text-align: center;
+      letter-spacing: 1px;
+      font-weight: 600;
+      color: black;
+      background: darkorchid;
+      box-shadow: 0 8px 15px darkorchid;
+    }
+
+
+    div {
+      text-align: center;
+    }
+  </style>
+</head>
+<script>
+  function zad1() {
+
+    function Gruppa(num, spec, kolvo) {
+
+      this.num = num;
+      this.spec = spec;
+      this.kolvo = kolvo;
+
+      this.add_stud = function add_stud(p) {
+        this.kolvo += p;
+      }
+      this.sub_stud = function sub_stud(m) {
+        this.kolvo -= m
+      }
+
+    }
+
+    gr1 = new Gruppa(1, " ИСиТ ", 28);
+    gr1.add_stud(2);
+    gr1.sub_stud(6);
+
+    gr2 = new Gruppa(2, " ДЭиВИ ", 30);
+    gr2.add_stud(5);
+    gr2.sub_stud(3);
+
+    gr3 = new Gruppa(3, " ПОИМБС ", 30);
+    gr3.add_stud(8);
+    gr3.sub_stud(1);
+
+    gr4 = new Gruppa(4, " ПОИТ ", 30);
+    gr4.add_stud(3);
+    gr4.sub_stud(9);
+
+    document.write('В ' + gr1.num + ' группе ' + ', ' + ' специальности: ' + gr1.spec + '-- ' + gr1.kolvo + ' учащихся' + "<br>");
+    document.write('В ' + gr2.num + ' группе ' + ', ' + ' специальности: ' + gr2.spec + '-- ' + gr2.kolvo + ' учащихся' + "<br>");
+    document.write('В ' + gr3.num + ' группе ' + ', ' + ' специальности: ' + gr3.spec + '-- ' + gr3.kolvo + ' учащихся' + "<br>");
+    document.write('В ' + gr4.num + ' группе ' + ', ' + ' специальности: ' + gr4.spec + '-- ' + gr4.kolvo + ' учащихся' + "<br>");
+  }
+
+  function zad2() {
+    function Student(firstname, secondname, fiz, math, inform) {
+      this.firstname = firstname;
+      this.secondname = secondname;
+      this.fiz = fiz;
+      this.math = math;
+      this.inform = inform;
+    }
+    let Max = new Student('Максим', ' Гордей ', 7, 8, 10);
+    let Pavel = new Student('Павел', ' Карпович ', 7, 5, 8);
+    let Rus = new Student('Руслан', ' Соловей ', 6, 9, 10);
+    alert(Max.firstname + Max.secondname);
+    alert(Pavel.firstname + Pavel.secondname);
+    alert(Rus.firstname + Rus.secondname);
+    Student.prototype.srbl = this.srbl;
+    Max.srbl = ((Max.fiz + Max.math + Max.inform) / 3);
+    Pavel.srbl = ((Pavel.fiz + Pavel.math + Pavel.inform) / 3);
+    Rus.srbl = ((Rus.fiz + Rus.math + Rus.inform) / 3);
+    Student.prototype.povedenie = this.povedenie;
+    Max.povedenie = "удв.";
+    Pavel.povedenie = "прим.";
+    Rus.povedenie = "неуд.";
+
+    document.write(Max.firstname + Max.secondname + "<br> Средний балл: " + Max.srbl.toPrecision(2) + "  поведение: " + Max.povedenie + "<br>");
+    document.write(Pavel.firstname + Pavel.secondname + "<br> Средний балл: " + Pavel.srbl.toPrecision(2) + "  поведение: " + Pavel.povedenie + "<br>");
+    document.write(Rus.firstname + Rus.secondname + "<br> Средний балл: " + Rus.srbl.toPrecision(2) + "  поведение: " + Rus.povedenie + "<br>");
+  }
+
+  function zad3() {
+
+    function Gruppa(num, spec, kolvo) {
+
+      this.num = num;
+      this.spec = spec;
+      this.kolvo = kolvo;
+
+      this.add_stud = function add_stud(k) {
+        this.kolvo += k;
+      }
+      this.sub_stud = function sub_stud(m) {
+        this.kolvo -= m
+      }
+
+    }
+
+    gr1 = new Gruppa(1, " ИСиТ ", 28);
+    gr1.add_stud(2);
+    gr1.sub_stud(6);
+
+    gr2 = new Gruppa(2, " ДЭиВИ ", 30);
+    gr2.add_stud(5);
+    gr2.sub_stud(3);
+
+    gr3 = new Gruppa(3, " ПОИМБС ", 30);
+    gr3.add_stud(8);
+    gr3.sub_stud(1);
+
+    gr4 = new Gruppa(4, " ПОИТ ", 30);
+    gr4.add_stud(3);
+    gr4.sub_stud(9);
+
+    function Student(firstname, secondname, fiz, math, inform) {
+      this.firstname = firstname;
+      this.secondname = secondname;
+      this.fiz = fiz;
+      this.math = math;
+      this.inform = inform;
+    }
+    let Max = new Student('Максим', ' Гордей ', 7, 8, 10);
+    let Pavel = new Student('Павел', ' Карпович ', 7, 5, 8);
+    let Rus = new Student('Руслан', ' Соловей ', 6, 9, 10);
+    Student.prototype.srbl = this.srbl;
+    Max.srbl = ((Max.fiz + Max.math + Max.inform) / 3);
+    Pavel.srbl = ((Pavel.fiz + Pavel.math + Pavel.inform) / 3);
+    Rus.srbl = ((Rus.fiz + Rus.math + Rus.inform) / 3);
+    Student.prototype.povedenie = this.povedenie;
+    Max.povedenie = "удв.";
+    Pavel.povedenie = "прим.";
+    Rus.povedenie = "неуд.";
+
+    mas = new Array('1', '2', '3', '4', '5');
+    document.write(mas + "<br> ");
+    delete mas[3];
+    document.write(mas + "<br> ");
+
+    document.write("имеется ли у массива 2-й элемент: " + (2 in mas) + "<br>");
+    document.write("firstname в Student: " + ("firstname" in Max) + "<br>");
+    document.write("num в Gruppa: " + ("num" in gr1) + "<br>");
+
+    document.write("Является ли объект Gruppa массивом ?:  " + (Gruppa instanceof Array) + "<br>");
+    document.write("Является ли объект Gruppa объектом ?:  " + (Gruppa instanceof Object) + "<br>");
+    document.write("Является ли объект Gruppa строкой ?:  " + (Gruppa instanceof String) + "<br>");
+    document.write("Является ли объект mas массивом ?:  " + (mas instanceof Array) + "<br>");
+    document.write("Является ли объект mas объектом ?:  " + (mas instanceof Object) + "<br>");
+    document.write("Является ли объект mas строкой ?:  " + (mas instanceof String) + "<br>");
+    document.write("Является ли объект Student массивом ?:  " + (Student instanceof Array) + "<br>");
+    document.write("Является ли объект Student объектом ?:  " + (Student instanceof Object) + "<br>");
+    document.write("Является ли объект Student строкой ?:  " + (Student instanceof String) + "<br>");
+
+    spec = new Array();
+    spec[0] = 6 - Math.pow(Math.PI, 2) + 3 * Math.exp(8);
+
+    mystring = 'Кривенчук Максим Игоревич ';
+
+    function qw() {
+      return 5;
+    }
+
+    let user = {
+      name: 'Вася',
+      age: 18,
+      sayHi() {
+        alert("Привет!");
+      }
+    };
+
+    user.sayHi();
+
+    document.write(' mystring: ' + (typeof mystring) + "<br>");
+    document.write('qw: ' + (typeof qw()) + "<br>");
+    document.write('gr1.add_stud: ' + (typeof gr1.add_stud) + "<br>");
+    document.write('gr1.sub_stud: ' + (typeof gr1.sub_stud) + "<br>");
+    document.write('gr1.num: ' + (typeof gr1.num) + "<br>");
+    document.write('gr1.spec: ' + (typeof gr1.spec) + "<br>");
+    document.write('Max: ' + (typeof Max) + "<br>");
+    document.write('Max.firstname: ' + (typeof Max.firstname) + "<br>");
+    document.write('Max.fiz: ' + (typeof Max.fiz) + "<br>");
+    document.write('Student: ' + (typeof Student) + "<br>");
+    document.write('Gruppa: ' + (typeof Gruppa) + "<br>"); -
+      document.write('spec: ' + (typeof spec) + "<br>");
+    document.write('Pavel.srbl: ' + (typeof Pavel.srbl) + "<br>");
+    document.write('Max.povedenie: ' + (typeof Max.povedenie) + "<br>");
+    document.write('minimym: ' + (typeof spec[0]) + "<br>");
+  }
+</script>
+
+<body>
+  <p align='center'><input type='button' class='button' value='Задание 1 ' onclick='zad1()'> <br>
+  <p align='center'><input type='button' class='button' value='Задание 2 ' onclick='zad2()'> <br>
+  <p align='center'><input type='button' class='button' value='Задание 3 ' onclick='zad3()'> <br>
+</body>
+
+</html>

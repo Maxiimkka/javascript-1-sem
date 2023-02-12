@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>lab 8</title>
+  <link rel="stylesheet" href="CSS8.css">
+  </link>
+</head>
+
+
+<body>
+  <h1>1</h1>
+
+  <p id="z1" onmouseover="mouse_over()" onmouseout="mouse_out()">
+    Excepteur do aliqua sint.<br />
+    Reprehenderit adipisicing proident.<br />
+    In anim mollit consequat Lorem.<br />
+    Adipisicing duis deserunt.
+  </p>
+
+  <h1>2</h1>
+
+  <p id="z2" onclick="mouse_click_size()">
+    Esse ipsum aliquip labore.<br />
+    Eu commodo occaecat dolore pariatur.<br />
+    Ex voluptate occaecat mollit voluptate.<br />
+
+  </p>
+
+  <h1>3</h1>
+
+  <p style="width:333px">
+    <img id="z3" src="морген.jpg" height='135px' width='333px' onclick="mouse_click_img()">
+  </p>
+
+  <h1>4</h1>
+
+  <p id="z4" style="width:333px" onclick="mouse_click_text()">
+    Amet mollit quis excepteur. <br />
+    Incididunt cillum enim.<br />
+    Anim cupidatat minim.<br />
+    Aliquip minim consequat.
+  </p>
+
+  <h1>5</h1>
+
+  <p>
+    <img id="z5" style="width: 323px;height: 135px;" src="aAzTvc.jpg" onmouseover="mouse_over_img()"
+      onmouseout="mouse_out_img()">
+  </p>
+
+  <h1>6</h1>
+
+  <p id="z6" ondblclick="db_click_border()" onclick="click_border()">
+    Mollit labore veniam.<br />
+    Nostrud sint ex eu minim.<br />
+    Mollit quis duis enim.<br />
+    Amet in enim sit.
+  </p>
+  <input type="button" id="button1" value="Кнопка">
+  <script>
+    button1.onclick = function () {
+      alert('Клик!');
+    };
+    function changeBgColo() {
+      document.body.style.backgroundColor = 'blue';
+    }
+
+    document.addEventListener('click', changeBgColor);
+
+
+    //1
+    function mouse_over() {
+      document.getElementById('z1').style.color = 'red';
+    }
+
+    function mouse_out() {
+      document.getElementById('z1').style.color = 'black';
+    }
+    //2
+    function mouse_click_size() {
+      document.getElementById('z2').style.fontSize = '20px';
+    }
+    //3
+    function mouse_click_img() {
+      document.getElementById("z3").src = "california-hipster-indie-wallpapers-Favim.com-3868616.jpg";
+    }
+    //4
+    function mouse_click_text() {
+      document.getElementById("z4").innerHTML = "<img src='c1ebd2c8027797323b94ce9446bb0cbe.jpg' height='135px' width='333px'>";
+    }
+    //5
+    function mouse_over_img() {
+      document.getElementById("z5").style.width = "666px";
+    }
+    function mouse_out_img() {
+      document.getElementById("z5").style.width = "323px";
+    }
+    //6
+    function db_click_border() {
+      document.getElementById("z6").style.border = "5px double black";
+    }
+    function click_border() {
+      document.getElementById("z6").style.border = "1px solid white";
+    }
+  </script>
+
+</body>
+
+</html>
+</body>
+
+</html>

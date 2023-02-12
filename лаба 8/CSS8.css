@@ -1,0 +1,21 @@
+#z6 {
+  border-color: white;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+p {
+  height: 135px;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  width: 22%;
+  font-size: 16px;
+  font-family: helvetica, serif;
+  margin: 50px auto auto;
+}

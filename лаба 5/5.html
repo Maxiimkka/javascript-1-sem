@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>laba1</title>
+  <style>
+    p {
+      text-align: center;
+    }
+
+    input {
+      background-color: rgba(194, 28, 139, 0.50);
+      border-radius: 10px;
+      height: 30px;
+      color: rgb(255, 255, 255);
+    }
+  </style>
+</head>
+
+<body background="фон.png">
+  <script>
+    "use strict";
+
+    function t1() {
+      let tags1 = "length= " + document.all.length + "\n";
+      for (let i = 1; i < (document.all.length); i++) {
+        tags1 += "Tag " + document.all[i].tagName + " number " + i + "\n";
+      }
+      alert(tags1);
+      console.log(tags1);
+    }
+
+    function t2() {
+      let tags2 = "length= " + document.body.childNodes.length + "\n";
+      for (let i = 1; i < (document.body.childNodes.length); i++) {
+        tags2 += "Tag " + document.body.childNodes[i].tagName + " number " + i + "\n";
+      }
+      alert(tags2);
+      console.log(tags2);
+    }
+
+    function t3() {
+      let all_1 = document.querySelectorAll('span');
+      alert("Первый элемент span " + all_1[0].innerHTML + "\n");
+      let all_2 = document.getElementsByTagName('span');
+      alert("Первый элемент span " + all_2[0].innerHTML + "\n");
+      let all_3 = document.getElementById('ida');
+      alert("Первый элемент span " + all_3.innerHTML + "\n");
+    }
+    function t4() {
+      let marks = 0;
+      let all_mark = document.getElementsByClassName('mark');
+      for (let i = 0; i < all_mark.length; i++) {
+        marks += parseInt(all_mark[i].innerHTML);
+      }
+      marks = marks / 4;
+
+
+      document.getElementById("myr").innerHTML = marks + " средний балл";
+    }
+
+  </script>
+
+  <p><input type='button' value='задание 1' onclick='t1()'>
+    <input type='button' value='задание 2' onclick='t2()'>
+    <input type='button' value='задание 3' onclick='t3()'>
+  </p>
+  <h1 align="center">
+    <font color="red">9 ВЕЛИКИХ КОМПОЗИТОРОВ КЛАССИЧЕСКОЙ МУЗЫКИ </font>
+  </h1>
+
+  <p align="right">
+    <font> Послушать что-нибудь из классики – что может быть лучше?!</font>
+  </p>
+  <h2>
+    <font color="blue"> Твоё настроение </font>
+  </h2>
+  <p align="left">
+    <font face="Segoe Script"> На выходных, когда хочется расслабиться, забыть о тревогах дня, заботах трудовой недели,
+      помечтать о прекрасном, да и просто поднять себе настроение.
+      Подумать только, классические произведения были созданы гениальными авторами так давно, что и не верится,
+      что что-то может пережить такое <span style="background: red" id="ida"> количество лет</span> . А эти произведения
+      до сих пор любят и слушают,
+      создают аранжировки и современные интерпретации. Даже в современной обработке, произведения
+      гениальных композиторов остаются классической музыкой. Как признает Ванесса Мэй, классические
+      произведения гениальны, а все гениальное не может быть скучным.</font>
+  </p>
+  <h2>
+    <font color="purple"> С чего начать ? </font>
+  </h2>
+  <p align="left">
+    <font face="Lucida Console" size="6"> Возможно, вы в целом ощущаете интерес к классической музыке, но
+      совершенно в ней не разбираетесь и не знаете с <span> чего начать?</span>
+      В этой статье мы расскажем о некоторых достаточно знаковых и просто прекрасных произведениях
+      для первого знакомства. 10 композиторов, <span style="background-color: chocolate"> представителей</span>
+      различных эпох, и их замечательные
+      творения станут первой ступенью погружения в мир прекрасного. </font>
+  </p>
+  <h2>
+    <font color="#daa520"> О компазиторах : </font>
+  </h2>
+  <p align="left">
+    <font face="Verdana" size="2"> Наверное, все великие композиторы обладают особым слухом, особой чувствительностью к
+      тону и мелодии,
+      что и позволило им создавать музыку, которой наслаждаются десятки поколений не только их соотечественников,
+      но и поклонников классической музыки во всем мире.
+      Если вы еще сомневаетесь, любите ли вы <span style="color:purple"> классическую музыку</span>, тогда вам нужно
+      встретиться с Бенджамином Цандером,
+      и вы убедитесь, что на самом деле, вы уже давний поклонник прекрасной музыки.
+      А сегодня мы будем говорить о 10-ке самых известных в мире композиторов.</font>
+  </p>
+
+  <ol>
+    <li>
+      <ul>
+        <h2> Немецкие композиторы </h2>
+        <li> <strong>Иоганн Себастьян Бах</strong>
+        <li> <strong>Людвиг ван Бетховен</strong>
+        <li> <strong>Рихард Вагнер</strong>
+      </ul>
+    <li>
+      <ul type="square">
+        <h2> Француские композиторы</h2>
+        <li> <strong>Жан-Батист Люлли</strong>
+        <li> <strong>Габриэль Батай</strong>
+        <li> <strong>Мишель Ришар Делаланд</strong>
+      </ul>
+    <li>
+      <ul type="circle">
+        <h2> Русские композиторы </h2>
+        <li> <strong>Пётр Ильич Чайковский</strong>
+        <li> <strong>Николай Андреевич Римский-Корсаков</strong>
+        <li> <strong>Михаил Иванович Глинка</strong>
+      </ul>
+  </ol>
+  <a href="Лабораторная%20работа%20№1-2.html">
+    <h2 style="text-align: center">Музыкальные инструменты </h2>
+  </a>
+  <table align="center" border="1">
+    <tr>
+      <th> Инструменты </th>
+      <th colspan="3"> Классические </th>
+    </tr>
+    <tr>
+      <td> Струнные </td>
+      <td colspan="3"> Фортепиано, скрипка, виолончель, контробас<br>гитара, укулеле, балалайка, домра</td>
+    </tr>
+    <tr> </tr>
+    <tr>
+      <td rowspan="2"> Духовые</td>
+      <th> Деревянные </th>
+      <th colspan="2"> Медные </th>
+    </tr>
+    <tr>
+      <td> Флейта, пикколо, <br> саксофон, фагот,<br>гобой </td>
+      <td colspan="2"> Труба, туба,тромбон, <br>валторна</td>
+    </tr>
+    <tr>
+      <td> Ударные </td>
+      <td> тарелки</td>
+      <td>литавры
+      <td> большой барабан</td>
+    </tr>
+  </table>
+  <br />
+
+  <p><input type='button' value='Посчитать средний балл' onclick='t4()'> </p>
+  <table align="center" border="1">
+    <tr>
+      <th>Предмет</th>
+      <th>Оценка</th>
+    </tr>
+    <tr>
+      <td>Физика:</td>
+      <td class="mark"> 10 </td>
+    </tr>
+    <tr>
+      <td>Математика:</td>
+      <td class="mark"> 9 </td>
+    </tr>
+    <tr>
+      <td>Астрономия:</td>
+      <td class="mark"> 10 </td>
+    </tr>
+    <tr>
+      <td>Русский язык:</td>
+      <td class="mark"> 8 </td>
+    </tr>
+  </table>
+  <div style="text-align: center;" id="myr"> </div>
+</body>
+
+
+
+</html>

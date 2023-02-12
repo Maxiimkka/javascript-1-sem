@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    form {
+      width: 35%;
+    }
+  </style>
+
+</head>
+
+<body>
+  <form name="info">
+    <fieldset>
+      <p> Факультет: </p>
+      <textarea cols="21" rows="3" name="facultet">Факультет Информационных Технологий</textarea>
+      <br />
+      <br />
+      <input type='text' placeholder='Фамилия' name='secondname' />
+      <br />
+      <input type='text' placeholder='Имя' name='firstname' />
+      <br />
+
+      <p>Курс</p>
+      <input type='radio' name='kr' value='1' /> 1
+      <input type='radio' name='kr' value='2' /> 2
+      <input type='radio' name='kr' value='3' /> 3
+      <input type='radio' name='kr' value='3' /> 4
+      <br />
+      <br />
+
+      Cпециальность:
+
+      <br />
+      <select name="spec">
+        <option>ПОИТ</option>
+        <option>ИСиТ</option>
+        <option>ПОИМБС</option>
+        <option>ДЭВИ</option>
+      </select>
+      <br>
+      <br>
+      Предметы:
+      <br>
+      <input type="checkbox" name="subject" value="ОИТ" />ОИТ
+      <input type="checkbox" name="subject" value="ОАП" />ОАП
+      <input type="checkbox" name="subject" value="История" />История
+      <input type="checkbox" name="subject" value="Физика" />Физика
+      <input type="checkbox" name="subject" value="Математика" />Математика
+      <br>
+      <br>
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+      <br>
+      <br>
+      <input type='button' value='Напечатать' onclick='Forma()' />
+      <input type='button' value='задание 4' onclick='z4()' />
+    </fieldset>
+  </form>
+  <div id="fr"> </div>
+  <br>
+  <br>
+  <form id="zad4">
+  </form>
+  <script>
+    function Forma() {
+      var form = document.forms.info;
+      document.getElementById("fr").innerHTML = (" <h1> " + form.elements.facultet.value + " </h1><br/> Студент " + form.elements.secondname.value + " " + form.elements.firstname.value + " специальности " + form.elements.spec.value + " курс " + form.elements.kr.value + " должен сдавать следующие предметы:");
+
+      for (let i = 0; i < form.elements.subject.length; i++) {
+        if (form.elements.subject[i].checked) {
+          document.getElementById("fr").innerHTML += ("<li>" + form.elements.subject[i].value + "</li>");
+        }
+      }
+      document.getElementById("fr").innerHTML;
+    }
+
+    function z4() {
+      let form = document.forms.info;
+      let m = 0;
+      for (let i = 0; i < form.elements.subject.length; i++) {
+        if (form.elements.subject[i].checked) {
+          m += "<option>" + form.elements.subject[i].value + "</option>";
+        }
+      }
+      document.getElementById("zad4").innerHTML = ("<select>" + m + "</select>");
+    }
+
+  </script>
+
+</body>
+
+</html>
