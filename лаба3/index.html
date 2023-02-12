@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>laba3</title>
+  <style>
+    table {
+      color: red;
+      font-size: 15px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      background-color: rgb(212, 178, 27);
+    }
+  </style>
+</head>
+
+<body>
+  <script type='text/javascript'>
+    //1
+    document.write('<br><font color="red" size="5">1</font><br>');
+    spec = new Array();
+    const V12 = 30;
+    const S = 38;
+    const N = 25;
+    spec[0] = 6 - Math.pow(Math.PI, 2) + 3 * Math.exp(8);
+    spec[1] = 2 * Math.cos(4) + Math.cos(12) + 8 - Math.exp(3);
+    spec[2] = 3 * Math.sin(9) + Math.log(5) + S;
+    spec[3] = 2 * Math.tan(5) + 6 - N + V12;
+    document.write(spec + '<br>')
+
+    var minimym = Math.min(...spec)
+    var maximym = Math.max(...spec)
+
+    document.write(spec.indexOf(minimym) + ". " + minimym + '<br>')
+    document.write(spec.indexOf(maximym) + ". " + maximym)
+
+    //3
+    document.write('<br><font color="red" size="5">3</font><br>');
+    document.write(Array.from('12345', c => c * c) + '<br>')
+    document.write(Array.of(1, 2, 3, 4, 5))
+
+    //4
+    document.write('<br><font color="red" size="5">4</font><br>');
+    var all = 'pow,pop,push,shift,round,floor,slice,sort';
+    var x = all.split(',');
+
+    var allArrayPrototype = new Set(Object.getOwnPropertyNames(Array.prototype));
+    var allMath = new Set(Object.getOwnPropertyNames(Math));
+
+    var intersectedArrayPrototype = x.filter((Array) => allArrayPrototype.has(Array));
+    var intersectedMath = x.filter((Math) => allMath.has(Math));
+
+    document.write(x, '<br>');
+    document.write(intersectedArrayPrototype, '<br>');
+    document.write(intersectedMath, '<br>');
+
+    intersectedArrayPrototype.unshift('unshift');
+    intersectedMath.push('sin');
+
+    document.write(intersectedArrayPrototype, '</br>');
+    document.write(intersectedMath, '</br>');
+    document.write('Длина массива 1: ', intersectedArrayPrototype.length, '</br>');
+    document.write('Длина массива 2: ', intersectedMath.length, '</br>');
+
+    //5
+    document.write('<br><font color="red" size="5">5</font><br>');
+    mystring = 'Кривенчук Максим Игоревич ';
+    document.write('Длина строки: ', mystring.length, '<br>');
+    document.write(mystring, '<br>');
+    document.write(mystring.toUpperCase(), '<br>');
+    document.write(mystring.toLowerCase(), '<br>');
+    mystring.concat(document.write(mystring.toUpperCase(), mystring.toLowerCase(), '<br>'));
+    document.write(mystring.replace(mystring, 'КМИ', '<br>'));
+    //6
+    document.write('<br><font color="red" size="5">6</font><br>');
+    x = new Date();
+    document.write("<table border = '1'>");
+
+    document.write("<tr>");
+    document.write("<td>" + "Год" + "</td>");
+    document.write("<td>" + x.getFullYear() + "</td>");
+    document.write("</tr>");
+
+    document.write("<tr>");
+    document.write("<td>" + "Месяц" + "</td>");
+    var g = x.getMonth();
+    var h = g + 1;
+    document.write("<td>" + h + "</td>");
+    document.write("</tr>");
+
+    document.write("<tr>");
+    document.write("<td>" + "День" + "</td>");
+    document.write("<td>" + x.getDate() + "</td>");
+    document.write("</tr>");
+
+    document.write("<tr>");
+    document.write("<td>" + "Час" + "</td>");
+    document.write("<td>" + x.getHours() + "</td>");
+    document.write("</tr>");
+
+    document.write("<tr>");
+    document.write("<td>" + "Минуты" + "</td>");
+    document.write("<td>" + x.getMinutes() + "</td>");
+    document.write("</tr>");
+
+    document.write("<tr>");
+    document.write("<td>" + "Секунды" + "</td>");
+    document.write("<td>" + x.getSeconds() + "</td>");
+    document.write("</tr>");
+
+    document.write("</table>");
+
+  </script>
+
+</body>
+
+</html>
