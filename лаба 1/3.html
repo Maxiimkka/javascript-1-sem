@@ -1,0 +1,195 @@
+в
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>laba1</title>
+  <style>
+    #button input {
+      color: rgb(184, 11, 11);
+      font-size: 15px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+  </style>
+</head>
+
+<body>
+  <script type='text/javascript'>
+    //1 
+    var welcome = () => {
+      alert("Вас приветствует учебный центр");
+    }
+    function name1() {
+      x = prompt('Введите имя', 'Имя');
+      alert('Добро пожаловать на наши курсы, ' + x);
+    }
+
+    function web() {
+      if (confirm('Хотите стать Web-дизайнером?')) {
+        alert('Учите стили CSS и JavaScript!');
+      }
+      else {
+        alert('Упускаете время!');
+      }
+    }
+    //2 
+    function sum1() {
+      var result;
+      var y = 10;
+      var z = 5;
+      result = z + y;
+
+      alert("Результат=" + result);
+      console.log("Результат=" + result);
+    }
+    function sum2() {
+      var result;
+      var y = '10';
+      var z = '5';
+      result = z + y;
+      alert("Результат=" + result);
+      console.log("Результат=" + result);
+    }
+    function sum3() {
+      var result;
+      var y = 22;
+      var z = '5';
+      result = z + y;
+      alert("Результат=" + result);
+      console.log("Результат=" + result);
+    }
+    function sum4() {
+      var result;
+      var y = '22';
+      var z = 5;
+      result = z + y;
+      alert("Результат=" + result);
+      console.log("Результат=" + result);
+    }
+    function conclusion() {
+      alert("Результатом сложения строки и числа всегда будет СТРОКА");
+    }
+    //3 остаток от деления 
+    function res() {
+      var t = 1;
+      var o = 9;
+      res1 = (22 * t + o) / 2;
+      alert('Результат1=' + res1);
+      var e = 3;
+      var g = 18;
+      res2 = (16 * g - 88 * e) - g * e;
+      alert('Результат2=' + res2);
+      res0 = res2 % res1;
+      alert('Результат=' + res0);
+      document.write('Результат=' + res0);
+    }
+    //4 
+    function operasions() {
+      s = prompt('Введите число ', 'Число');
+      if ((s < 20 || s > 40) && s != 15 && s % 5 == 0.0) {
+        alert('Правильное значение');
+      }
+      else {
+        alert('Неправильное значение');
+      }
+    }
+    //4.1
+    function operasions1() {
+      s = prompt('Введите число ', 'Число');
+      if ((s < 10 || s > 30) && s != 12 && s % 5 == 0.0) {
+        alert('Правильное значение');
+      }
+      else {
+        alert('Неправильное значение');
+      }
+    }
+    //5 
+    function compare() {
+      A = prompt('Введите первое число ', 'Число');
+      B = prompt('Введите второе число ', 'Число');
+      if (A > B)
+        alert('A больше B');
+      else if (A < B)
+        alert('A меньше B');
+      else alert('A равно B');
+
+      //5.1
+
+      var a = prompt("Сколько мячей забил Игорь");
+      var b = prompt("Сколько мячей забила Ваня");
+      (a > b) ? alert("Игорь выиграл") : alert("Ваня выиграл");
+
+    }
+    //6 
+    function day() {
+      f = prompt('Введите день недели по счету');
+      switch (f) {
+        case '1':
+          alert('Monday');
+          break;
+        case '2':
+          alert('Tuesday');
+          break;
+        case '3':
+          alert('Wednesday');
+          break;
+        case '4':
+          alert('Thursday');
+          break;
+        case '5':
+          alert('Friday');
+          break;
+        case '6':
+          alert('Saturday');
+          break;
+        case '7':
+          alert('Sunday');
+          break;
+        default:
+          alert('fgsf');
+          break;
+      }
+    }
+    //7
+    function numbers() {
+      x = 0x123abc;
+      alert('Первое число ' + x);
+      y = -0o234;
+      alert('Второе число ' + y);
+      z = -0b010;
+      alert('Третье число ' + z);
+    }
+    //8 
+    function error() {
+      const a = 5
+
+      try {
+        console.log(b) //  b не объявлена поэтому возникает ошибка
+      } catch (err) {
+        console.error(err) // в консоль попадает сообщение об ошибке и стек ошибки
+      }
+
+      console.log(a) // выполнение скрипта не останавливается, данная команда выполняется
+    }
+
+  </script>
+  <div id='button'>
+    <input type='button' value='приветствие' onclick=' welcome()' />
+    <input type='button' value='приветствие с именем' onclick='name1()' />
+    <input type='button' value='вопрос' onclick='web()' />
+    <input type='button' value='сложение чисел' onclick='sum1()' />
+    <input type='button' value='сложение строк' onclick='sum2()' />
+    <input type='button' value='сложение числа и строки' onclick='sum3()' />
+    <input type='button' value='сложение строки и числа' onclick='sum4()' />
+    <input type='button' value='вывод' onclick='conclusion()' />
+    <input type='button' value='остаток от деления' onclick='res()' />
+    <input type='button' value='ввод числа' onclick='operasions()' />
+    <input type='button' value='ввод числа' onclick='operasions1()' />
+    <input type='button' value='сравнение чисел' onclick='compare()' />
+    <input type='button' value='день недели' onclick='day()' />
+    <input type='button' value='ошибка' onclick='error()' />
+    <input type='button' value='числа в системах счисдения' onclick='numbers()' />
+  </div>
+</body>
+
+</html>
